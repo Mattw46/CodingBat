@@ -23,7 +23,6 @@ function front3(str){
 }
 
 const assert = require('assert');
-//assert.equal(diff21(19), 2);
 assert.equal(front3('Java'), 'JavJavJav');
 assert.equal(front3('Chocolate'), 'ChoChoCho');
 assert.equal(front3('abc'), 'abcabcabc');
