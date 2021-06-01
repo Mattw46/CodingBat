@@ -3,8 +3,8 @@
  * 
  * Testing BackAround
  */
+package io.github.mattw46.java.wup1;
 
-import io.github.mattw46.java.wup1.BackAround;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -45,10 +45,11 @@ public class TestBackAround {
     // @Test
     // public void hello() {}
     @Test
-    public void testOne() {
-      assert BA.backAround("cat").equals("tcatt");
-      assert BA.backAround("Hello").equals("oHelloo");
-      assert BA.backAround("a").equals("aaa");
-      System.out.println("All tests passed");
+    public void testBackAround() {
+        System.out.println("Testing BackAround");
+        assert BA.backAround("cat").equals("tcatt");
+        assert BA.backAround("Hello").equals("oHelloo");
+        assert BA.backAround("a").equals("aaa");
+        System.out.println("BackAround passed");
     }
 }
