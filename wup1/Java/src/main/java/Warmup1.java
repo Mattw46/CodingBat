@@ -6,6 +6,18 @@ public class Warmup1 {
     * Return true if we sleep in.
     */
     public boolean sleepIn(boolean weekday, boolean vacation) {
+        
         return !(weekday == true && vacation == false);
+    }
+
+    /*
+    * Given an int n, return the absolute difference between n and 21,
+    * except return double the absolute difference if n is over 21.
+    */
+    public int diff21(int n) {
+        if (n > 21) {
+            return Math.abs(n - 21) * 2;
+        }
+        return Math.abs(n - 21);
     }
 }

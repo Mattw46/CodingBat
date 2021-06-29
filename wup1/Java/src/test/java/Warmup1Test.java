@@ -31,13 +31,25 @@ public class Warmup1Test {
      */
     @Test
     public void testSleepIn() throws Exception {
-        //TODO: Test goes here...
         assertTrue(wup1.sleepIn(false, false));
         assertFalse(wup1.sleepIn(true, false));
         assertTrue(wup1.sleepIn(false, true));
         assertTrue(wup1.sleepIn(true, true));
     }
 
-
+    @Test
+    public void testDiff21() throws Exception {
+        assertTrue(wup1.diff21(19) == 2);
+        assertTrue(wup1.diff21(10) == 11);
+        assertTrue(wup1.diff21(21) == 0);
+        assertTrue(wup1.diff21(25) == 8);
+        assertTrue(wup1.diff21(30) == 18);
+        assertTrue(wup1.diff21(0) == 21);
+        assertTrue(wup1.diff21(1) == 20);
+        assertTrue(wup1.diff21(2) == 19);
+        assertTrue(wup1.diff21(-1) == 22);
+        assertTrue(wup1.diff21(-2) == 23);
+        assertTrue(wup1.diff21(50) == 58);
+    }
 }
 
