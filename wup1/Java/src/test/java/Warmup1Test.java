@@ -51,5 +51,28 @@ public class Warmup1Test {
         assertTrue(wup1.diff21(-2) == 23);
         assertTrue(wup1.diff21(50) == 58);
     }
+
+    @Test
+    public void testNearHundred() throws Exception {
+        assertTrue(wup1.nearHundred(93) == true);
+        assertTrue(wup1.nearHundred(90) == true);
+        assertTrue(wup1.nearHundred(89) == false);
+        assertTrue(wup1.nearHundred(110) == true);
+        assertTrue(wup1.nearHundred(111) == false);
+        assertTrue(wup1.nearHundred(121) == false);
+        assertTrue(wup1.nearHundred(-101) == false);
+        assertTrue(wup1.nearHundred(-209) == false);
+        assertTrue(wup1.nearHundred(190) == true);
+        assertTrue(wup1.nearHundred(209) == true);
+        assertTrue(wup1.nearHundred(0) == false);
+        assertTrue(wup1.nearHundred(5) == false);
+        assertTrue(wup1.nearHundred(-50) == false);
+        assertTrue(wup1.nearHundred(191) == true);
+        assertTrue(wup1.nearHundred(189) == false);
+        assertTrue(wup1.nearHundred(200) == true);
+        assertTrue(wup1.nearHundred(210) == true);
+        assertTrue(wup1.nearHundred(211) == false);
+        assertTrue(wup1.nearHundred(290) == false);
+    }
 }
 
