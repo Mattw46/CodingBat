@@ -74,5 +74,19 @@ public class Warmup1Test {
         assertTrue(wup1.nearHundred(211) == false);
         assertTrue(wup1.nearHundred(290) == false);
     }
+
+    @Test
+    public void missingChar() {
+        assertTrue(wup1.missingChar("kitten", 1).equals("ktten"));
+        assertTrue(wup1.missingChar("kitten", 0).equals("itten"));
+        assertTrue(wup1.missingChar("kitten", 4).equals("kittn"));
+        assertTrue(wup1.missingChar("Hi", 0).equals("i"));
+        assertTrue(wup1.missingChar("Hi", 1).equals("H"));
+        assertTrue(wup1.missingChar("code", 0).equals("ode"));
+        assertTrue(wup1.missingChar("code", 1).equals("cde"));
+        assertTrue(wup1.missingChar("code", 2).equals("coe"));
+        assertTrue(wup1.missingChar("code", 3).equals("cod"));
+        assertTrue(wup1.missingChar("chocolate", 8).equals("chocolat"));
+    }
 }
 
