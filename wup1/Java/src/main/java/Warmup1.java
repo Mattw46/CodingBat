@@ -41,4 +41,32 @@ public class Warmup1 {
     public String missingChar(String str, int n) {
         return str.substring(0,n) + str.substring(n+1,str.length());
     }
+    
+    /*
+    * Given a string, take the last char and return a new string with
+    * the last char added at the front and back, so "cat" yields "tcatt".
+    * The original string will be length 1 or more.
+    */
+    public String backAround(String str) {
+        return str.charAt(str.length() -1) + str + str.charAt(str.length() -1);
+    }
+
+    /* Given a string, return true if the string starts with "hi" and false otherwise. */
+    public boolean startHi(String str) {
+        if (str.length() >= 2 && str.substring(0,2).equals("hi")) {
+            return true;
+        }
+        return false;
+    }
+
+    /*
+    * We'll say that a number is "teen" if it is in the range 13..19 inclusive.
+    * Given 3 int values, return true if 1 or more of them are teen.
+    */
+    public boolean hasTeen(int a, int b, int c) {
+        if ((a >= 13 && a <= 19) || (b >= 13 && b <= 19) || (c >= 13 && c <= 19)) {
+            return true;
+        }
+        return false;
+    }
 }

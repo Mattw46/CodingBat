@@ -88,5 +88,34 @@ public class Warmup1Test {
         assertTrue(wup1.missingChar("code", 3).equals("cod"));
         assertTrue(wup1.missingChar("chocolate", 8).equals("chocolat"));
     }
+
+    @Test
+    public void backAround() {
+        assertTrue(wup1.backAround("cat").equals("tcatt"));
+        assertTrue(wup1.backAround("Hello").equals("oHelloo"));
+        assertTrue(wup1.backAround("a").equals("aaa"));
+        assertTrue(wup1.backAround("abc").equals("cabcc"));
+        assertTrue(wup1.backAround("read").equals("dreadd"));
+        assertTrue(wup1.backAround("boo").equals("obooo"));
+    }
+
+    @Test
+    public void startHi() {
+        assertTrue(wup1.startHi("hi there") == true);
+        assertTrue(wup1.startHi("hi") == true);
+        assertTrue(wup1.startHi("hello hi") == false);
+        assertTrue(wup1.startHi("he") == false);
+        assertTrue(wup1.startHi("h") == false);
+        assertTrue(wup1.startHi("") == false);
+        assertTrue(wup1.startHi("ho hi") == false);
+        assertTrue(wup1.startHi("hi ho") == true);
+    }
+
+    @Test
+    public void hasTeen() {
+        assertTrue(wup1.hasTeen(13, 20, 10) == true);
+        assertTrue(wup1.hasTeen(20, 19, 10) == true);
+        assertTrue(wup1.hasTeen(20, 10, 13) == true);
+    }
 }
 
