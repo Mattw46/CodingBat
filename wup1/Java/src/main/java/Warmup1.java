@@ -69,4 +69,30 @@ public class Warmup1 {
         }
         return false;
     }
+
+    /*
+     * Return true if the given string begins with "mix",
+     * except the 'm' can be anything, so "pix", "9ix" .. all count.
+     */
+    public boolean mixStart(String str) {
+        if(str.length() >= 3 && str.substring(1,3).equals("ix")) {
+            return true;
+        }
+        return false;
+    }
+
+    /*
+    * Given 2 int values, return whichever value is nearest to the value 10,
+    * or return 0 in the event of a tie. Note that Math.abs(n)
+    * returns the absolute value of a number.
+    */
+    public int close10(int a, int b) {
+        if(Math.abs(a - 10) == Math.abs(b - 10)) {
+            return 0;
+        }
+        if (Math.abs(a - 10) < Math.abs(b - 10)) {
+            return a;
+        }
+        return b;
+    }
 }

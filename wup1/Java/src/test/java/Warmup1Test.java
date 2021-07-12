@@ -30,7 +30,7 @@ public class Warmup1Test {
      *
      */
     @Test
-    public void testSleepIn() throws Exception {
+    public void sleepInTest() throws Exception {
         assertTrue(wup1.sleepIn(false, false));
         assertFalse(wup1.sleepIn(true, false));
         assertTrue(wup1.sleepIn(false, true));
@@ -38,7 +38,7 @@ public class Warmup1Test {
     }
 
     @Test
-    public void testDiff21() throws Exception {
+    public void diff21Test() throws Exception {
         assertTrue(wup1.diff21(19) == 2);
         assertTrue(wup1.diff21(10) == 11);
         assertTrue(wup1.diff21(21) == 0);
@@ -53,7 +53,7 @@ public class Warmup1Test {
     }
 
     @Test
-    public void testNearHundred() throws Exception {
+    public void nearHundredTest() throws Exception {
         assertTrue(wup1.nearHundred(93) == true);
         assertTrue(wup1.nearHundred(90) == true);
         assertTrue(wup1.nearHundred(89) == false);
@@ -76,7 +76,7 @@ public class Warmup1Test {
     }
 
     @Test
-    public void missingChar() {
+    public void missingCharTest() {
         assertTrue(wup1.missingChar("kitten", 1).equals("ktten"));
         assertTrue(wup1.missingChar("kitten", 0).equals("itten"));
         assertTrue(wup1.missingChar("kitten", 4).equals("kittn"));
@@ -90,7 +90,7 @@ public class Warmup1Test {
     }
 
     @Test
-    public void backAround() {
+    public void backAroundTest() {
         assertTrue(wup1.backAround("cat").equals("tcatt"));
         assertTrue(wup1.backAround("Hello").equals("oHelloo"));
         assertTrue(wup1.backAround("a").equals("aaa"));
@@ -100,7 +100,7 @@ public class Warmup1Test {
     }
 
     @Test
-    public void startHi() {
+    public void startHiTest() {
         assertTrue(wup1.startHi("hi there") == true);
         assertTrue(wup1.startHi("hi") == true);
         assertTrue(wup1.startHi("hello hi") == false);
@@ -112,10 +112,36 @@ public class Warmup1Test {
     }
 
     @Test
-    public void hasTeen() {
+    public void hasTeenTest() {
         assertTrue(wup1.hasTeen(13, 20, 10) == true);
         assertTrue(wup1.hasTeen(20, 19, 10) == true);
         assertTrue(wup1.hasTeen(20, 10, 13) == true);
+    }
+
+    @Test
+    public void mixStartTest() {
+        assertTrue(wup1.mixStart("mix snacks") == true);
+        assertTrue(wup1.mixStart("pix snacks") == true);
+        assertTrue(wup1.mixStart("piz snacks") == false);
+        assertTrue(wup1.mixStart("nix") == true);
+        assertTrue(wup1.mixStart("ni") == false);
+        assertTrue(wup1.mixStart("n") == false);
+        assertTrue(wup1.mixStart("") == false);
+    }
+
+    @Test
+    public void close10Test() {
+        assertTrue(wup1.close10(8, 13) == 8);
+        assertTrue(wup1.close10(13, 8) == 8);
+        assertTrue(wup1.close10(13, 7) == 0);
+        assertTrue(wup1.close10(7, 13) == 0);
+        assertTrue(wup1.close10(9, 13) == 9);
+        assertTrue(wup1.close10(13, 8) == 8);
+        assertTrue(wup1.close10(10, 12) == 10);
+        assertTrue(wup1.close10(11, 10) == 10);
+        assertTrue(wup1.close10(5, 21) == 5);
+        assertTrue(wup1.close10(0, 20) == 0);
+        assertTrue(wup1.close10(10, 10) == 0);
     }
 }
 
