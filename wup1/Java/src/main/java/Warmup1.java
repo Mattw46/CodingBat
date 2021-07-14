@@ -95,4 +95,42 @@ public class Warmup1 {
         }
         return b;
     }
+    
+    /*
+    * Return true if the given string contains between 1 and 3 'e' chars.
+    */
+    public boolean stringE(String str) {
+        long count = str.chars().filter(ch -> ch == 'e').count();
+        if (count >= 1 && count <= 3) {
+            return true;
+        }
+        return false;
+    }
+
+    /*
+     * Given a non-empty string and an int N, return the string made starting with char 0,
+     * and then every Nth char of the string. So if N is 3, use char 0, 3, 6, ... and so on.
+     * N is 1 or more.
+     */
+    public String everyNth(String str, int n) {
+        int count = 0;
+        String s = "";
+        while (count < str.length()) {
+            s += str.charAt(count);
+            count += n;
+        }
+        return s;
+    }
+
+    /*
+    * We have two monkeys, a and b, and the parameters aSmile and bSmile indicate
+    * if each is smiling. We are in trouble if they are both smiling or if neither
+    * of them is smiling. Return true if we are in trouble.
+    */
+    public boolean monkeyTrouble(boolean aSmile, boolean bSmile) {
+        if ((aSmile && bSmile) || (!aSmile && !bSmile)) {
+            return true;
+        }
+        return false;
+    }
 }

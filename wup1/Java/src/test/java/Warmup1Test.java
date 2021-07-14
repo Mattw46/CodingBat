@@ -143,5 +143,34 @@ public class Warmup1Test {
         assertTrue(wup1.close10(0, 20) == 0);
         assertTrue(wup1.close10(10, 10) == 0);
     }
+
+    @Test
+    public void stringETest() {
+        assertTrue(wup1.stringE("Hello") == true);
+        assertTrue(wup1.stringE("Heelle") == true);
+        assertTrue(wup1.stringE("Heelele") == false);
+        assertTrue(wup1.stringE("Hll") == false);
+        assertTrue(wup1.stringE("e") == true);
+        assertTrue(wup1.stringE("") == false);
+    }
+
+    @Test
+    public void everyNthTest() {
+        assertTrue(wup1.everyNth("Miracle", 2).equals("Mrce"));
+        assertTrue(wup1.everyNth("abcdefg", 2).equals("aceg"));
+        assertTrue(wup1.everyNth("abcdefg", 3).equals("adg"));
+        assertTrue(wup1.everyNth("Chocolate", 3).equals("Cca"));
+        assertTrue(wup1.everyNth("Chocolates", 3).equals("Ccas"));
+        assertTrue(wup1.everyNth("Chocolates", 4).equals("Coe"));
+        assertTrue(wup1.everyNth("Chocolates", 100).equals("C"));
+    }
+
+    @Test
+    public void monkeyTrouble() {
+        assertTrue(wup1.monkeyTrouble(true, true) == true);
+        assertTrue(wup1.monkeyTrouble(false, false) == true);
+        assertTrue(wup1.monkeyTrouble(true, false) == false);
+        assertTrue(wup1.monkeyTrouble(false, true) == false);
+    }
 }
 
