@@ -166,11 +166,48 @@ public class Warmup1Test {
     }
 
     @Test
-    public void monkeyTrouble() {
+    public void monkeyTroubleTest() {
         assertTrue(wup1.monkeyTrouble(true, true) == true);
         assertTrue(wup1.monkeyTrouble(false, false) == true);
         assertTrue(wup1.monkeyTrouble(true, false) == false);
         assertTrue(wup1.monkeyTrouble(false, true) == false);
+    }
+
+    @Test
+    public void parrotTroubleTest() {
+        assertTrue(wup1.parrotTrouble(true, 6) == true);
+        assertTrue(wup1.parrotTrouble(true, 7) == false);
+        assertTrue(wup1.parrotTrouble(false, 6) == false);
+        assertTrue(wup1.parrotTrouble(true, 21) == true);
+        assertTrue(wup1.parrotTrouble(false, 21) == false);
+        assertTrue(wup1.parrotTrouble(false, 20) == false);
+        assertTrue(wup1.parrotTrouble(true, 23) == true);
+        assertTrue(wup1.parrotTrouble(false, 23) == false);
+        assertTrue(wup1.parrotTrouble(true, 20) == false);
+        assertTrue(wup1.parrotTrouble(false, 12) == false);
+    }
+
+    @Test
+    public void posNeg() {
+        assertTrue(wup1.posNeg(1, -1, false) == true);
+        assertTrue(wup1.posNeg(-1, 1, false) == true);
+        assertTrue(wup1.posNeg(-4, -5, true) == true);
+        assertTrue(wup1.posNeg(-4, -5, false) == false);
+        assertTrue(wup1.posNeg(-4, 5, false) == true);
+        assertTrue(wup1.posNeg(-4, 5, true) == false);
+        assertTrue(wup1.posNeg(1, 1, false) == false);
+        assertTrue(wup1.posNeg(-1, -1, false) == false);
+        assertTrue(wup1.posNeg(1, -1, true) == false);
+        assertTrue(wup1.posNeg(-1, 1, true) == false);
+        assertTrue(wup1.posNeg(1, 1, true) == false);
+        assertTrue(wup1.posNeg(-1, -1, true) == true);
+        assertTrue(wup1.posNeg(5, -5, false) == true);
+        assertTrue(wup1.posNeg(-6, 6, false) == true);
+        assertTrue(wup1.posNeg(-5, -6, false) == false);
+        assertTrue(wup1.posNeg(-2, -1, false) == false);
+        assertTrue(wup1.posNeg(1, 2, false) == false);
+        assertTrue(wup1.posNeg(-5, 6, true) == false);
+        assertTrue(wup1.posNeg(-5, -5, true) == true);
     }
 }
 

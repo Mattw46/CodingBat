@@ -133,4 +133,32 @@ public class Warmup1 {
         }
         return false;
     }
+
+    /*
+    * We have a loud talking parrot. The "hour" parameter is the current hour time in the range 0..23.
+    * We are in trouble if the parrot is talking and the hour is before 7 or after 20.
+    * Return true if we are in trouble.
+    */
+    public boolean parrotTrouble(boolean talking, int hour) {
+        if(talking && (hour < 7 || hour > 20)) {
+            return true;
+        }
+        return false;
+    }
+
+    /*
+    * Given 2 int values, return true if one is negative and one is positive.
+    * Except if the parameter "negative" is true, then return true only if both are negative.
+    */
+    public boolean posNeg(int a, int b, boolean negative) {
+        if (negative) {
+            if (a < 0 && b < 0) {
+                return true;
+            }
+        }
+        else if (!negative && (a < 0 && b >= 0) || (a >= 0 && b < 0)) {
+            return true;
+        }
+        return false;
+    }
 }
