@@ -34,3 +34,19 @@ assert(monkey_trouble(False, False) == True)
 assert(monkey_trouble(True, False) == False)
 assert(monkey_trouble(False, True) == False)
 print('*** End Testing ***')
+
+# Warmup-1 > sum_double
+# Given two int values, return their sum. Unless the two values are the same, 
+# then return double their sum.
+
+def sum_double(a, b):
+  if a == b:
+    return (a + b) * 2
+  else:
+    return a + b
+
+print('*** Testing sum_double ***')
+assert(sum_double(1, 2) == 3)
+assert(sum_double(3, 2) == 5)
+assert(sum_double(2, 2) == 8)
+print('*** End Testing ***')
