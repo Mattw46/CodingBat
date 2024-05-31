@@ -49,4 +49,71 @@ print('*** Testing sum_double ***')
 assert(sum_double(1, 2) == 3)
 assert(sum_double(3, 2) == 5)
 assert(sum_double(2, 2) == 8)
+assert(sum_double(-1, 0) == -1)
+assert(sum_double(3, 3) == 12)
+assert(sum_double(0, 0) == 0)
+assert(sum_double(0, 1) == 1)
+assert(sum_double(3, 4) == 7)
+print('*** End Testing ***')
+
+# Warmup-1 > diff21
+# Given an int n, return the absolute difference between n and 21, 
+# except return double the absolute difference if n is over 21.
+def diff21(n):
+  if n > 21:
+    return abs(n -21) *2
+  else:
+    return abs(n - 21)
+
+print('*** Testing diff21 ***')
+assert(diff21(19) == 2)
+assert(diff21(10) == 11)
+assert(diff21(21) == 0)
+assert(diff21(22) == 2)
+assert(diff21(25) == 8)
+assert(diff21(30) == 18)
+assert(diff21(0) == 21)
+assert(diff21(1) == 20)
+assert(diff21(2) == 19)
+assert(diff21(-1) == 22)
+assert(diff21(-2) == 23)
+assert(diff21(50) == 58)
+print('*** End Testing ***')
+
+# Warmup-1 > parrot_trouble
+# We have a loud talking parrot. The "hour" parameter is the current hour 
+# time in the range 0..23. We are in trouble if the parrot is talking 
+# and the hour is before 7 or after 20. Return True if we are in trouble.
+def parrot_trouble(talking, hour):
+   return talking and (hour < 7 or hour > 20)
+   
+print('*** Testing parrot_trouble ***')
+assert(parrot_trouble(True, 6) == True)
+assert(parrot_trouble(True, 7) == False)
+assert(parrot_trouble(False, 6) == False)
+assert(parrot_trouble(True, 21) == True)
+assert(parrot_trouble(False, 21) == False)
+assert(parrot_trouble(False, 20) == False)
+assert(parrot_trouble(True, 23) == True)
+assert(parrot_trouble(False, 23) == False)
+assert(parrot_trouble(True, 20) == False)
+assert(parrot_trouble(False, 12) == False)
+print('*** End Testing ***')
+
+# Warmup-1 > makes10
+# Given 2 ints, a and b, return True if one if them is 10 or if their 
+# sum is 10.
+def makes10(a, b):
+  return a == 10 or b == 10 or (a+b) == 10
+
+print('*** Testing makes10 ***')
+assert(makes10(9, 10) == True)
+assert(makes10(9, 9) == False)
+assert(makes10(1, 9) == True)
+assert(makes10(10, 1) == True)
+assert(makes10(10, 10) == True)
+assert(makes10(8, 2) == True)
+assert(makes10(8, 3) == False)	
+assert(makes10(10, 42) == True)	
+assert(makes10(12, -2) == True)
 print('*** End Testing ***')
