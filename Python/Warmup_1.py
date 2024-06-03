@@ -117,3 +117,49 @@ assert(makes10(8, 3) == False)
 assert(makes10(10, 42) == True)	
 assert(makes10(12, -2) == True)
 print('*** End Testing ***')
+
+# Warmup-1 > near_hundred
+# Given an int n, return True if it is within 10 of 100 or 200. 
+# Note: abs(num) computes the absolute value of a number.
+def near_hundred(n):
+   return ((abs(100 - n) <= 10) or (abs(200 - n) <= 10))
+   
+print('*** Testing near_hundred ***')
+assert(near_hundred(93) == True)
+assert(near_hundred(90) == True)
+assert(near_hundred(89) == False)
+assert(near_hundred(110) == True)
+assert(near_hundred(111) == False)
+assert(near_hundred(121) == False)
+assert(near_hundred(-101) == False)
+assert(near_hundred(-209) == False)
+assert(near_hundred(190) == True)
+assert(near_hundred(209) == True)
+assert(near_hundred(0) == False)	
+assert(near_hundred(5) == False)
+assert(near_hundred(-50) == False)
+assert(near_hundred(191) == True)
+assert(near_hundred(189) == False)
+assert(near_hundred(200) == True)	
+assert(near_hundred(210) == True)	
+assert(near_hundred(211) == False)
+assert(near_hundred(290) == False)
+print('*** End Testing ***')
+
+# Warmup-1 > pos_neg
+# Given 2 int values, return True if one is negative and one is positive. 
+# Except if the parameter "negative" is True, 
+# then return True only if both are negative.
+def pos_neg(a, b, negative):
+  if negative == True and a < 0 and b < 0:
+    return True
+  elif a < 0 or b < 0:
+    return True
+  else:
+    return False
+   
+print('*** Testing pos_neg ***')
+assert(pos_neg(1, -1, False) == True)
+assert(pos_neg(-1, 1, False) == True)
+assert(pos_neg(-4, -5, True) == True)
+print('*** End Testing ***')
