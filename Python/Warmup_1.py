@@ -163,3 +163,46 @@ assert(pos_neg(1, -1, False) == True)
 assert(pos_neg(-1, 1, False) == True)
 assert(pos_neg(-4, -5, True) == True)
 print('*** End Testing ***')
+
+# Warmup-1 > not_string
+# Given a string, return a new string where "not " has been added 
+# to the front. However, if the string already begins with "not", 
+# return the string unchanged.
+def not_string(str):
+  if len(str) >= 3 and str[:3] == "not":
+    return str
+  else:
+    return "not " + str
+
+print('*** Testing pos_neg ***')
+assert(not_string('candy') == 'not candy')
+assert(not_string('x') == 'not x')
+assert(not_string('not bad') == 'not bad')
+assert(not_string('candy') == 'not candy')
+assert(not_string('x') == 'not x')
+assert(not_string('not bad') == 'not bad')
+assert(not_string('bad') == 'not bad')
+assert(not_string('not') == 'not')
+assert(not_string('is not') == 'not is not')
+assert(not_string('no') == 'not no')
+print('*** End Testing ***')
+
+# Warmup-1 > missing_char
+# Given a non-empty string and an int n, return a new string where the 
+# char at index n has been removed. The value of n will be a valid 
+# index of a char in the original string (i.e. n will be in the range 0..len(str)-1 inclusive).
+def missing_char(str, n):
+  return str[:n] + str[n+1:]
+
+print('*** Testing missing_char ***')
+assert(missing_char('kitten', 1) == 'ktten')
+assert(missing_char('kitten', 0) == 'itten')
+assert(missing_char('kitten', 4) == 'kittn')
+assert(missing_char('Hi', 0) == 'i')
+assert(missing_char('Hi', 1) == 'H')
+assert(missing_char('code', 0) == 'ode')
+assert(missing_char('code', 1) == 'cde')
+assert(missing_char('code', 2) == 'coe')
+assert(missing_char('code', 3) == 'cod')
+assert(missing_char('chocolate', 8) == 'chocolat')
+print('*** End Testing ***')
