@@ -206,3 +206,33 @@ assert(missing_char('code', 2) == 'coe')
 assert(missing_char('code', 3) == 'cod')
 assert(missing_char('chocolate', 8) == 'chocolat')
 print('*** End Testing ***')
+
+# Warmup-1 > front_back
+# Given a string, return a new string where the first and last chars 
+# have been exchanged.
+def front_back(str):
+  if len(str) <= 1:
+    return str
+  return str[len(str) -1] + str[1:len(str) -1] + str[0]
+
+print('*** Testing front_back ***')
+assert(front_back('code') == 'eodc')
+assert(front_back('a') == 'a')
+assert(front_back('ab') == 'ba')
+assert(front_back('abc') == 'cba')
+assert(front_back('') == '')
+assert(front_back('Chocolate') == 'ehocolatC')
+assert(front_back('aavJ') == 'Java')
+assert(front_back('hello') == 'oellh')
+print('*** End Testing ***')
+
+# Warmup-1 > front3
+# Given a string, we'll say that the front is the first 3 chars of 
+# the string. If the string length is less than 3, the front is whatever 
+# is there. Return a new string which is 3 copies of the front.
+def front3(str):
+  return str[0:3] + str[0:3] + str[0:3]
+
+assert(front3('Java') == 'JavJavJav')
+assert(front3('Chocolate') == 'ChoChoCho')
+assert(front3('abc') == 'abcabcabc')
