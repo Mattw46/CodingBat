@@ -236,3 +236,4 @@ def front3(str):
 assert(front3('Java') == 'JavJavJav')
 assert(front3('Chocolate') == 'ChoChoCho')
 assert(front3('abc') == 'abcabcabc')
+
